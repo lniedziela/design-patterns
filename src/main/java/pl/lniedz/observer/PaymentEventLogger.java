@@ -3,7 +3,7 @@ package pl.lniedz.observer;
 public class PaymentEventLogger implements PaymentListener {
 
     @Override
-    public void paymentDone() {
+    public void paymentDone(PaymentEvent e) {
         log();
     }
 

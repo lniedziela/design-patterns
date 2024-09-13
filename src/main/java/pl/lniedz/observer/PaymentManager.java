@@ -8,7 +8,10 @@ public class PaymentManager {
     private final List<PaymentListener> paymentListeners = new ArrayList<>();
 
     public void pay() {
-        paymentListeners.forEach(PaymentListener::paymentDone);
+        var paymentEvent = new PaymentEvent();
+        paymentListeners.forEach(
+                p -> p.paymentDone(paymentEvent)
+        );
     }
 
     public void registerPaymentListener(PaymentListener p) {
