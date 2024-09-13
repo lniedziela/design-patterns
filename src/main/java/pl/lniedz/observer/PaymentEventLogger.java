@@ -1,8 +1,13 @@
 package pl.lniedz.observer;
 
-public class PaymentEventLogger {
+public class PaymentEventLogger implements PaymentListener {
 
-    public void log() {
+    @Override
+    public void paymentDone() {
+        log();
+    }
+
+    private void log() {
         System.out.println("Payment received.");
     }
 }
